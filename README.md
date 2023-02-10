@@ -26,6 +26,7 @@
 
 Here are the prerequisites in order to run the script:
 
+ - [ ] git 2.33.0.windows.2 or latest should be installed for windows in order to take advantage of git commands in the command line
  - [ ] nodejs v17.6.0 or latest, should be built in with the latest "npm"
  - [ ] Mocha.js v10.2.0 or latest (will automatically be installed using the package.json file)
  - [ ] Axios v1.3.2 or latest (will automatically be installed using the package.json file)
@@ -37,21 +38,21 @@ Another important prerequisite in order for us to run the script is to have the 
 
  1. Install NodeJS on your system. You can download the latest version from the official website: https://nodejs.org/en/download/.
  2. Open the installer and follow the prompts to install the Node.js. By default, the installer uses the Node.js distribution in C:\Program Files\nodejs. The installer should set the C:\Program Files\nodejs\bin directory in Window's PATH environment variable. Restart any open command prompts for the change to take effect.
- 3. Verify installation is successful by running `node -v` in command line, verify npm is also available by running `npm -v`in the command line as well.
- 4. Navigate to your desired folder in which you will place the app.
- 5. Visit https://github.com/BestBuy/api-playground and clone the application. Use the command  `git clone`  followed by the repository url to fetch the script from GitHub, for example:  `git clone https://github.com/BestBuy/api-playground.git` .
-6. Once the download is complete, do not install it yet. I ran into issues when installing the app and cannot run the application. These are the troubleshooting steps that I did to run it.
+ 3. Verify installation is successful by running `node -v` in command line, verify npm is also available by running `npm -v`in the command line as well. Both should show their respective versions.
+ 4. Navigate to your desired folder in which you will place the app and enter the terminal (CMD for windows)
+ 5. Visit https://github.com/BestBuy/api-playground and clone the application. Use the command  `git clone`  followed by the repository url to fetch the script from GitHub, for example:  `git clone https://github.com/BestBuy/api-playground.git` . User can also just dowload the repository and manually extract it on the desired folder 
+ 6. Once the download is complete, navigate to `/api-playground folder`. Do not install it yet. I ran into issues when installing the app and cannot run the application. These are the troubleshooting steps that I've done to run it.
 
     
 
 		Troubleshooting steps:
 		1. Change the version of "sqlite3" from 4.0.3 to 5.1.4.
-		2. Change one line of code in bestbuy-api-playground\src\db\index.js line 36 from var  model  =  sequelize['import'](path.join(__dirname,  file)); <to> var  model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+		2. Change one line of code in bestbuy-api-playground\src\db\index.js line 36 <FROM> var  model  =  sequelize['import'](path.join(__dirname,  file)); <TO> var  model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
 		3. Run npm install and ignore all errors and warnings.
 		4. Run npm start.
 
  8. Now open [http://localhost:3030](http://localhost:3030/) in your browser to begin exploring the API
-
+ 9. Remember to start the app so that you won't encounter any issues when running the script.
 		 
 
 
@@ -61,7 +62,7 @@ Please see below the step-by-step procedure for fetching the API Automation Test
 
 1. Open a command prompt or terminal window and navigate to the directory where you want to store the script.
 2. Use the command `git clone` followed by the repository url to fetch the script from GitHub, for example: `https://github.com/chanosky/ServiceModuleAPITest.git` or just download the repository to your desired location.
-3. Navigate into the cloned repository by using the command `cd yourrepository`
+3. Navigate into the cloned repository by using the command `cd yourrepository` (make sure you are in the `/ServiceModuleAPITest` folder.)
 4. Install the necessary requirements by running the command `npm install`
 5. The test has multiple ways to run the automation tests, see commands below:
 
@@ -91,7 +92,7 @@ This script has the following limitations:
     
 It is important to keep these limitations in mind when using this script and to thoroughly test the script on different operating systems before using it.
 
-> Do not change anything inside the folders, check the commented variables inside *ServiceAPITests\ServiceAPITestData\testdata.js*, you can play around with this test data file but changing any variables might incur errors when running.
+> Do not change anything inside the folders, check the commented variables inside `ServiceAPITests\ServiceAPITestData\testdata.js`, you can play around with this test data file but changing any variables might incur errors when running.
 
 ## Bugs and issues found
 
