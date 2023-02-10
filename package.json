@@ -1,0 +1,22 @@
+{
+  "name": "servicemoduleapitest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gettests": "mocha --no-timeout 'ServiceAPITests/GetServicesRequests.js' --reporter mochawesome",
+    "othertests": "mocha --no-timeout 'ServiceAPITests/OtherServicesRequests.js' --reporter mochawesome",
+    "alltests": "mocha --no-timeout 'ServiceAPITests/*.js' --reporter mochawesome",
+    "smoke": "mocha --no-timeout --tags is:smoke 'ServiceAPITests/*.js' --reporter mochawesome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.2",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "mocha-tags": "^1.0.1",
+    "mochawesome": "^7.1.3"
+  }
+}
